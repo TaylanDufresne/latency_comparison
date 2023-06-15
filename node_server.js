@@ -29,5 +29,10 @@ app.get("/medimg", async (req, res) => {
   fs.createReadStream('1080_comparison.html').pipe(res)
 })
 
+app.get("/pngimg", async (req, res) => {
+    res.writeHead(200, { 'content-type': 'text/html' })
+  fs.createReadStream('1080png_comparison.html').pipe(res)
+})
+
 app.listen(port)
 console.log(`Server running at http://${hostname}:${port}/`);
